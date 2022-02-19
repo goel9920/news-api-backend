@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "599d623b-02fd-4f0c-802e-db2bb65dcdac",
+		"name": "news-api-indiatoday",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "{{$randomEmail}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{$randomPassword}}",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "{{$randomFirstName}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "8123456328",
+									"type": "text"
+								},
+								{
+									"key": "dateOfBirth",
+									"value": "{{$randomDatePast}}",
+									"type": "text"
+								},
+								{
+									"key": "timeOfBirth",
+									"value": "{{$randomDatePast}}",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "maritalStatus",
+									"value": "unmarried",
+									"type": "text"
+								},
+								{
+									"key": "language",
+									"value": "english",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/E:/DOCS/My water Photo.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "news",
+			"item": [
+				{
+					"name": "get news",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/news?sort=desc",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"news"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "entertainment",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
