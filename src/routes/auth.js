@@ -19,7 +19,6 @@ const router = Router();
 // @access  Public
 router.post("/register",  upload.single("profilePicture"), validateRegBody, async (req, res) => {
   try {
-    console.log(req.body);
     const result = await drive.uploadFile(req.file);
     const url=result.url;
     const { username, email, password, phoneNumber,dateOfBirth,timeOfBirth,gender,maritalStatus,language } = req.body;
